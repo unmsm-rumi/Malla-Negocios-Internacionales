@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malla Curricular - Admin. de Negocios Internacionales</title>
+  <title>Malla Curricular - Admin. de Negocios Internacionales ✈️</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -254,12 +254,13 @@
 Prerrequisitos: ${curso.prereq ? curso.prereq.join(', ') : 'NR'}`;
           div.appendChild(tooltip);
 
-          if (div.classList.contains("activo")) {
-            div.addEventListener("click", () => {
-              const nuevo = !(localStorage.getItem(curso.nombre) === "true");
-              localStorage.setItem(curso.nombre, nuevo);
-              renderCursos();
-            });
+          if (div.classList.contains("activo") || div.classList.contains("tildado")) {
+  div.addEventListener("click", () => {
+    const nuevo = !(localStorage.getItem(curso.nombre) === "true");
+    localStorage.setItem(curso.nombre, nuevo);
+    renderCursos();
+  });
+});
           }
 
           divCiclo.appendChild(div);
